@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#hotBar{
+    width: 100%;
+    height: 5vh;
+    background-color: aliceblue;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#chip{
+    width: fit-content;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    height: 2vh;
+    background-color: rgba(255, 234, 164, 0.637);
+    margin-left: 1vw;
+    border-radius: 50px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.delete{
+    margin-left: .5vw;
+}
+.delete:hover{
+    cursor: pointer;
+}
+#chipText{
+    margin: 0;
+}
+.delete:after{
+    content: "\D7";
+    font-size: 20px;
+    color: rgba(88, 88, 88, 0.37);
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    right: 10%;
+}
+#options{
+    margin-top: 1rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    height: fit-content;
+}
+.chipActive{
+    background-color: rgba(130, 173, 253, 0.589);
+}
+button{
+    height: 2vw;
+    width: 7vw;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: transform 0.2s ease-in-out;
+
+}
+button:hover{
+    transform: scale(1.02);
+
+}
+
+@media screen and (max-width: 1200px) {
+    button{
+        width: 15vw;
+        height: 5vh;
+    }
+}
+@media screen and (max-width: 500px) {
+    button{
+        width: 20vw;
+        height: 4vh;
+    }
+}
