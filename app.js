@@ -3,10 +3,13 @@ const hotBar = document.getElementById("hotBar");
 const chipTemp = document.getElementById("chipTemp");
 const btn = document.getElementsByClassName("btn")[0];
 
+//Chip colors
+const randomColor = ["red", "green", "blue", "yellow", "purple", "pink", "orange"];
+
 
 //Add "chip" template
 function addTemp(obj) {
-    let index = Math.floor(Math.random() * 101);
+    let index = Math.floor(Math.random() * 99242);
     //Check to see if the button has the "chipActive" class
 
     if (!obj.classList.contains("chipActive")) {
@@ -21,12 +24,49 @@ function addTemp(obj) {
         chipText.innerHTML = obj.innerText;
 
         //Generate a random color. You can delete this and just set the background color in the CSS.
-        const randomColor = ["#9ADCFF", "#FFB2A6", "#bbccf9", "#80e7e4", "#FD8A8A", "#B1B2FF", "#FFF89A", "#FFF89A"];
         randomIndex = Math.floor(Math.random() * randomColor.length);
+        let chipBackground = chipTempCopy.children[0];
 
         //Set the background color to the random color. You can delete this and just set the background color in the CSS.
-        let chipBackground = chipTempCopy.children[0];
-        chipBackground.style.backgroundColor = randomColor[randomIndex];
+        switch (randomColor[randomIndex]) {
+            case "red":
+                chipText.style.color = "red";
+                chipBackground.style.backgroundColor = "#ffdede";
+                chipBackground.style.border = "1px solid red";
+                break;
+            case "green":
+                chipText.style.color = "#00ff00";
+                chipBackground.style.backgroundColor = "#deffde";
+                chipBackground.style.border = "1px solid #00ff3786";
+                break;
+            case "blue":
+                chipText.style.color = "#00b7ff";
+                chipBackground.style.backgroundColor = "#c3f6ff";
+                chipBackground.style.border = "1px solid #00ccff86";
+                break;
+            case "yellow":
+                chipText.style.color = "#ffd000";
+                chipBackground.style.backgroundColor = "#fffec3";
+                chipBackground.style.border = "1px solid #ffe600";
+                break;
+            case "purple":
+                chipText.style.color = "#a200ff";
+                chipBackground.style.backgroundColor = "#dfc3ff";
+                chipBackground.style.border = "1px solid #8400ff86";
+                break;  
+            case "pink":
+                chipText.style.color = "#ff00ea";
+                chipBackground.style.backgroundColor = "#ffc3fc";
+                chipBackground.style.border = "1px solid #ff00f286";
+                break;    
+            case "orange":
+                chipText.style.color = "#ff7b00";
+                chipBackground.style.backgroundColor = "#ffd6c3";
+                chipBackground.style.border = "1px solid #ff990086";
+                break;              
+        }
+
+        // chipBackground.style.backgroundColor = randomColor[randomIndex];
 
         //Append the clone to the "hotbar"
         hotBar.appendChild(chipTempCopy);

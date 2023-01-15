@@ -2,33 +2,56 @@ body{
     margin: 0;
     box-sizing: border-box;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.content{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #hotBar{
     width: 100%;
-    height: 5vh;
-    background-color: aliceblue;
+    height: auto;
+    min-height: 4vh;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(189, 189, 189);
     border-radius: 10px;
     display: flex;
-    align-items: center;
     padding: 5px;
-    overflow-x: hidden;
-    overflow-y: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+
 }
+
+
+
 #chip{
+    margin-top: .25vw;
     width: fit-content;
-    padding: 10px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
     height: 2vh;
-    background-color: rgba(255, 234, 164, 0.637);
+    background-color: #c3e9ff;
+    border: 1px solid #006eff86;
     margin-left: 1vw;
+    margin-right: 1vw;
     border-radius: 50px;
-    display: flex;
+    display: block;
     position: relative;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
+    margin-bottom: .25vw;
+}
+#chipText{
+    color: #0077ff;
 }
 .delete{
     margin-left: .5vw;
@@ -50,22 +73,22 @@ body{
 }
 #options{
     margin-top: 1rem;
-
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     height: fit-content;
 }
 .chipActive{
-    background-color: rgba(130, 173, 253, 0.589);
+    background-color: rgba(210, 226, 255, 0.589);
 }
 button{
     height: 2vw;
-    width: 7vw;
-    border: none;
-    border-radius: 10px;
+    width: 20%;
+    border: 1px solid rgb(189, 189, 189);
+    border-radius: 5px;
     background-color: rgb(255, 255, 255);
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: transform 0.2s ease-in-out;
+    font-weight: 600;
 
 }
 button:hover{
